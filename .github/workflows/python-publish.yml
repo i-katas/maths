@@ -4,8 +4,8 @@
 name: maths
 
 on:
-  release:
-    types: [created]
+    push:
+        branches: [master]
 
 jobs:
   deploy:
