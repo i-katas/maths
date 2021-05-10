@@ -1,4 +1,5 @@
 from pytest import approx 
+from math import sqrt
 
 def test_multiplciation():
     a, b = 2, 3
@@ -30,3 +31,13 @@ def roots(a, n):
 
     return x
         
+
+def test_identities_formula():
+    a, b = 2, 3
+
+    assert sqrt(a) - sqrt(b)  \
+            == approx((sqrt(a) - sqrt(b)) * (sqrt(a) + sqrt(b)) / (sqrt(a) + sqrt(b))) \
+            == approx((a - b) / (sqrt(a) + sqrt(b)))
+    assert (sqrt(a) - sqrt(b)) ** -1 \
+            == approx(1 / (sqrt(a) - sqrt(b))) \
+            == approx((sqrt(a) + sqrt(b)) / (a -b)) 
