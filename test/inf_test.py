@@ -11,6 +11,8 @@ def test_arithmetic():
     assert inf * inf == inf
     assert 1 * inf == inf
     assert 1 + inf == inf
+    assert 1 - -inf == inf
+    assert -1 + -inf == -inf
     assert -inf * inf == -inf
     assert -inf * -inf == inf
     assert 1 / inf == 0
@@ -28,3 +30,4 @@ def test_eqvuivalent_infinitismal():
         x, e = 1/n, 1e10
         assert sin(x) == approx(x, e)
         assert tan(x) == approx(x, e)
+
